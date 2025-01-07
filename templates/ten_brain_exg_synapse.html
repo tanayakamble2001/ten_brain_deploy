@@ -1,0 +1,1116 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+
+<style>
+
+   /* .body1 {
+        background-color: #000;
+        color: white;
+        font-family: Arial, sans-serif;
+       }*/
+
+    .head {
+        width: 100%; /* Full width for header */
+        height: auto; /* Adjusts based on image aspect ratio */
+        position: relative; /* To position the small image and text within */
+        margin-bottom: 20px; /* Space below the header */
+    }
+    
+    .head img {
+        width: 100%; /* Ensure the header image takes up full width */
+        height: auto; /* Maintains aspect ratio */
+    }
+    .center-text {
+    text-align: center; /* Center the text horizontally */
+    position: absolute; /* Positioning relative to the header */
+    top: 0%; /* Position it a bit lower within the header */
+    left: 50%;
+    transform: translateX(-50%); /* Center the element horizontally */
+    color: white; /* Make sure the text is white */
+    font-family: Arial, sans-serif; /* Use a clean font */
+    }
+    
+    .center-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px; /* Space below the heading */
+    }
+    
+    .center-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Space below the subheading */
+    }
+    
+    .center-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    }
+    
+    /* Ten Brain Research EXG Synapse ends */
+    /* list content starts */
+    .w3-content{
+        list-style: none;
+        margin-top: 5px;
+        display: inline-flex;
+        text-align: center;
+        line-height: 2.2;
+        position: absolute; /* Position the small images over the header image */
+        top: 75%; /* Adjust position from top */
+        left: 50%; /* Center them horizontally */
+        transform: translateX(-50%); /* Center alignment */
+        display: flex; /* Use flexbox for horizontal alignment */
+        justify-content: space-between; /* Space between the small images */
+        width: 70%; /* Adjust width based on the number of small images */
+    }
+    /* list content ends */
+    
+    
+    .w3-content img {
+        width: 50px; /* Size of the small image */
+        height: auto;
+    }
+    
+    .container {
+        padding: 50px;
+    }
+    
+    .card-custom {
+        background-color: #000;
+        border: 1px solid #444;
+        color: white;
+        font-size: smaller;
+        text-align: center;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 15px 0;
+    }
+    
+    .card-custom h4,
+    .card-custom h5 {
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .highlight {
+        color: #39FF14; /* Neon Green Highlight */
+    }
+    
+    .image-section img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .spacing {
+        margin: 20px 0;
+    }
+    
+    /* Intro Heading Styling */
+    .intro-heading {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f9f9f9; /* Light background for contrast */
+        border-radius: 10px; /* Rounded corners for the section */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+    
+    
+    
+    
+    /* Media Queries for Smaller Screens */
+    @media (max-width: 768px) {
+        .intro-heading h3 {
+            font-size: 1.5rem; /* Slightly smaller heading for mobile */
+        }
+    
+        .video-frame {
+            max-width: 100%; /* Make the video occupy full width */
+        }
+    }
+    
+    
+    /* Media Queries for smaller screens */
+    @media (max-width: 767px) {
+        .small-img-text {
+            position: absolute;
+            top: 65%; /* Adjust position for smaller screens */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%; /* Increase the width for small screens */
+            justify-content: space-evenly; /* Spread out the small images evenly */
+        }
+       /* .body {
+            position: absolute;
+            top: 65%;  Adjust position for smaller screens 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;  Increase the width for small screens 
+            justify-content: space-evenly;  Spread out the small images evenly 
+        } */
+    
+        .small-img-text img {
+            width: 40px; /* Resize small images for mobile */
+            height: auto;
+        }
+    
+        .container {
+            padding: 20px; /* Less padding on smaller screens */
+        }
+    
+        .card-custom {
+            font-size: small; /* Reduce font size on small screens */
+            padding: 15px; /* Less padding */
+        }
+    
+        .intro-heading h3 {
+            font-size: 1.5rem; /* Adjust heading size for small screens */
+        }
+    
+        .video-frame iframe {
+            width: 100%; /* Make iframe responsive */
+            height: auto; /* Adjust height */
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .card-custom {
+            padding: 10px; /* Less padding for very small screens */
+        }
+    
+        .intro-heading h3 {
+            font-size: 1.2rem; /* Adjust heading size further */
+        }
+    }
+    
+    /* Packages and Bundles Styles */
+    .packages-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 30px;
+    }
+    .packages-container .card1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; /* Adds space between the image and the text */
+    }
+    
+    .packages-container .card1 h2 {
+    margin-top: 15px; /* Adds space above the text */
+    }
+    
+    .packages-container .card1 p {
+    margin-top: 10px; /* Adds space between the heading and paragraph */
+    }
+    
+    .card1 {
+       background-color: #000000;
+       border: 1px solid #fffdfd;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgb(101, 101, 101);
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+        width: 300px;
+    }
+    
+    .card1-title {
+        font-size: 24px;
+        color: #ffffff;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .card1-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    .btn {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    /* Product Description */
+    .tabs-container {
+        margin: 50px auto;
+        max-width: 800px;
+        border: 1px solid #ffffff;
+        background-color: #000000;
+      }
+      .nav-tabs {
+        border-bottom: 1px solid #ffffff;
+      }
+      .nav-tabs .nav-link {
+        color: #fff;
+        border: none;
+        background-color: transparent;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .nav-tabs .nav-link:hover {
+        background-color: #05050500;
+        color: #ffffff;
+      }
+      .nav-tabs .nav-link.active {
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: bold;
+      }
+      .tab-content {
+        padding: 20px;
+        color: #fff;
+        text-align: center; /* Center-align content */
+      }
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid #fff;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #ff9800;
+        color: #fff9f9;
+      }
+      
+      /* Intro Heading Styling */
+    .intro-heading {
+        text-align: center;
+        margin: 20px auto;
+        padding: 20px;
+       
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+    
+    /* Heading Text */
+    .intro-heading h3 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    /* Video Frame Styling */
+    .video-frame {
+        margin: 0 auto;
+        padding: 15px;
+        max-width: 960px; /* Restrict the video width */
+        overflow: hidden;
+    }
+    
+    .video-frame iframe {
+        width: 100%; /* Make the video responsive */
+        
+        border-radius: 10px; /* Rounded corners for the video */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    }
+    
+    
+    .container h1 {
+    color: #fff; /* White color for the title */
+    text-align: center;
+    margin-bottom: 30px;
+    }
+    .card2 {
+    background-color: #1a1a1a;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    }
+    .card2 h5 {
+    color: #fff; /* White color for the card headers */
+    text-align: center;
+    margin-top: 15px;
+    }
+    .card2 ul {
+    list-style-type: disc; /* Ensure bullet points are displayed */
+    padding-left: 20px; /* Add spacing for indentation */
+    color: #fff; /* White color for the list items */
+    }
+    .card2 ul li {
+    margin: 5px 0;
+    }
+    
+    .box {
+        background-color: #000000; /* Black background */
+        border: 1px solid #dee2e6; /* Light gray border */
+        padding: 20px;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 8px;
+        height: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to the boxes */
+      }
+      .box h3 {
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+      .box p {
+        font-size: 1rem;
+      }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Wrapper for the slider */
+    .my-slider {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .slider-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+
+      .card {
+        flex: 0 0 23%; /* Show 4 cards at a time with some space */
+        padding: 10px;
+        box-sizing: border-box;
+        border: 2px solid white; /* White border for the card */
+        border-radius: 10px; /* Optional: to keep the rounded corners */
+        margin-right: 10px; /* Small space between cards */
+        background-color: rgba(0, 0, 0, 0.6); /* Optional: to make the cards stand out on dark backgrounds */
+        width: 200px;
+      }
+      
+      .card:last-child {
+        margin-right: 0; /* Remove margin on the last card */
+      }
+      
+      .card img {
+        width: 100%;
+        border-radius: 25px;
+        margin-left: 10px;
+        padding-right: 25px;
+      }
+      
+     /* .card-body {
+        text-align: center;
+        color: white; /* Ensure text is readable on dark background 
+      } */
+      
+      /* Navigation buttons */
+      .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 10;
+      }
+      
+      .prev-btn {
+        left: 10px;
+      }
+      
+      .next-btn {
+        right: 10px;
+      }
+      
+      /* Hide navigation buttons on small screens */
+      @media (max-width: 768px) {
+        .card3 {
+          flex: 0 0 100%; /* Show 1 card at a time */
+          margin-right: 0; /* No space between cards on small screens */
+        }
+        /* .head_text_mobile{
+          margin-top: 56%;
+        } */
+        .center-text{
+          margin-top: 53%;
+        }
+        .head_list{
+          margin-top: 72% !important;
+        }
+        .head_list_compo{
+          margin-right: -10%;
+          margin-left: -9%;
+        }
+      }
+      
+    
+    
+        </style>
+   
+    <!--<body>-->
+      <div class="text-white bg-black">
+        <!-- Header Section -->
+        <div class="head">
+            <img src="https://www.neuphony.com/img/product-exg-synapse/header.webp" alt="Neuphony EXG Synapse">
+            <!-- <div class="head_text_mobile"> -->
+            <div class="center-text">
+                <h5 class="mt-2"><span>India leading DIY Brain-Computer Interface Kit</span> </h5>  
+            </div>
+            
+          <!-- list content starts -->
+          <div class="row mt-5 head_list">
+            <ul class="w3-content">
+                <li class="col-sm-3 head_list_compo">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/EEG.webp" alt="">
+                    <p>EEG</p>
+                </li>
+                <li class="col-sm-3 head_list_compo">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/EMG.webp" alt="">
+                    <p>EMG</p>
+                </li>
+                <li class="col-sm-3 head_list_compo">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/EOG.webp" alt="">
+                    <p>EOG</p>
+                </li>
+                <li class="col-sm-3 head_list_compo">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/ECG.webp" alt="">
+                    <p>ECG</p>
+                </li>
+            </ul>
+          </div>
+          <!--</div>end head_text_mobile-->
+        </div>
+    
+        <div class="container mt-3">
+            <!-- Two Column Layout -->
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                    <div class="card-custom spacing">
+                        <h5>Discover Neuroscience with the Neuphony EXG Synapse</h5>
+                        <p>Dive into the world of brain-computer interface with our DIY kit.</p>
+                    </div>
+                    <!-- Row for Build & Discover and Driven By The Community -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-custom spacing">
+                                <img src="https://www.neuphony.com/img/product-exg-synapse/Discover.webp" alt="Discover" class="img-fluid">
+                                <h4>Build & Discover</h4>
+                                <p>Affordable and Complete: Get hands-on with brain-computer interface technology at an incredible value.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-custom spacing">
+                                <h4>Driven By The Community</h4>
+                                <p>Collaborate and Innovate: With open-source accessibility, join a community dedicated to pushing the boundaries of neuroscience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Right Column -->
+                <div class="col-md-6 text-center">
+                    <div class="card-custom spacing">
+                        <h4 class="mb-4">For All Explorers</h4>
+                        <p>Simple and Comprehensive: Whether you’re studying, researching, or just passionate about neuroscience, Synapse is your perfect companion.</p>
+                        <div class="image-section">
+                            <img src="https://www.neuphony.com/img/product-exg-synapse/Explorers.webp" alt="Neuphony EXG Synapse" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Intro Heading -->
+            <div class="intro">
+                <h3 class="text-center">Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h3>
+                <div class="video-frame">
+                    <iframe width="947" height="448" src="https://www.youtube.com/embed/jTDCuVDt-ms" 
+                            title="Unlock the Future of HCI &amp; BCI Projects | Introducing Neuphony EXG Synapse DIY Neuroscience Kits" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <!-- Packages and Bundles Section -->
+        <div class="packages-container">
+            <div class="card1">
+               
+                <img src="https://www.neuphony.com/img/product-exg-synapse/Box.webp" alt="" height="90px" width="70px" class="center">
+                <h2 class="card-title">In The Box</h2>
+                <p class="card-text">The Kit comes with everything you need to get started, including sensors and accessories for seamless biosignal acquisition</p>
+                <button class="btn">Schematic</button>
+            
+            </div>
+            <div class="card1">
+                <img src="https://www.neuphony.com/img/product-exg-synapse/Streaming.webp" alt="" height="90px" width="70px">
+                <h2 class="card-title">Visualization and Streaming</h2>
+                <p class="card-text">Easily visualize your data with our visualizer or integrate it into larger projects with Lab Streaming Layer support.</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="card1">
+                <img src="https://www.neuphony.com/img/product-exg-synapse/Projects.webp" alt="" height="90px" width="70px">
+                <h2 class="card-title">Open Source Projects</h2>
+                <p class="card-text">Access our Github repository for various biosignal acquisition examples and start creating your own projects..</p>
+                <button class="btn">Access Github Repository</button>
+            </div>
+         </div>
+
+
+       
+         <style>
+          .product-container {
+              padding: 20px;
+          }
+        
+          .product-layout {
+              display: flex;
+              flex-wrap: wrap; /* Allows columns to wrap on small screens */
+              justify-content: space-between;
+              align-items: center;
+          }
+        
+          .image-container {
+              flex: 1 1 50%; /* 50% width on larger screens */
+              padding: 10px;
+              text-align: center;
+          }
+        
+          .details-container {
+              flex: 1 1 50%; /* 50% width on larger screens */
+              padding: 10px;
+          }
+        
+          .image-container img {
+              max-width: 200px; /* Ensure image scales with the width of its container */
+              height: 200px; /* Maintain aspect ratio */
+          }
+        
+          /* Media Query for small screens */
+          @media (max-width: 768px) {
+              .product-layout {
+                  flex-direction: column; /* Stack the columns vertically on smaller screens */
+                  text-align: center; /* Center the text on smaller screens */
+              }
+        
+              .image-container,
+              .details-container {
+                  flex: 1 1 100%; /* Full width on smaller screens */
+              }
+          }
+        </style>
+        
+        <div class="product-container">
+            <h3 class="text-center"><b>Neuphony EXG Synapse Product Information</b></h3>
+            <div class="row align-items-center product-layout">
+                <!-- Left Column: Image -->
+                <div class="col-md-6 text-center image-container">
+                    <img src="https://www.neuphony.com/img/product-exg-synapse/synapseproduct1.webp" alt="Neuphony EXG Synapse Product Image" class="img-fluid" style= "height: auto;">
+                </div>
+                
+                <!-- Right Column: Product Details -->
+                <div class="col-md-6 details-container">
+                    <h4>Neuphony EXG Synapse</h4>
+                    <p>
+                        DIY HCI/BCI & Robotics Kit for beginners with biopotential signal compatibility, covering ECG, EEG, EOG, and EMG.
+                    </p>
+                </div>
+            </div>   
+        </div>
+        
+
+         <!--- end of Neuphony EXG Synapse Product Information-->
+
+
+         <!--Product description -->
+         <div class="container">
+            <div class="text-center my-4">
+              <h1>Product Description</h1>
+            </div>
+            <div class="tabs-container">
+              <ul class="nav nav-tabs justify-content-center" id="productTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">
+                    About Synapse
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">
+                    Technical Specifications
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content" id="productTabsContent">
+                <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+                  <p>
+                    Dive into DIY neuroscience with EXG Synapse Kits! Perfect for students and innovators, effortlessly capture EMG, ECG, EEG, and EOG signals. Explore the brain and muscles—it’s hands-on and exciting. 
+                    Neuphony Synapse has comprehensive biopotential signal compatibility, covering ECG, EEG, EOG, and EMG, ensuring a versatile solution for various physiological monitoring applications. 
+                    It seamlessly pairs with any MCU featuring ADC, expanding compatibility across platforms like Arduino, ESP32, STM32, and more. 
+                    Enjoy flexibility with an optional bypass of the bandpass filter allowing tailored signal output for diverse analysis.
+                  </p>
+                </div>
+                <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Specification</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Input Voltage</td>
+                        <td>3.3V</td>
+                      </tr>
+                      <tr>
+                        <td>Input Impedance</td>
+                        <td>20<sup>9</sup> Ω</td>
+                      </tr>
+                      <tr>
+                        <td>Compatible Hardware</td>
+                        <td>Any ADC input</td>
+                      </tr>
+                      <tr>
+                        <td>Biopotentials</td>
+                        <td>ECG, EMG, EOG, or EEG (configurable bandpass) | By default configured for a bandwidth of 1.6Hz to 47Hz and Gain 50</td>
+                      </tr>
+                      <tr>
+                        <td>No. of Channels</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>Electrodes</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>Dimensions</td>
+                        <td>30.0 x 33.0 mm</td>
+                      </tr>
+                      <tr>
+                        <td>Open Source</td>
+                        <td>Hardware</td>
+                      </tr>
+                      <tr>
+                        <td>Special Features</td>
+                        <td>Very Compact and space-utilized EXG Synapse</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+             </div>
+           </div>
+       
+    
+        <!-- --->
+        <div class="container">
+            <h1>Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h1>
+            <div class="row g-4">
+              <!-- Explorer Edition -->
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card2 h-100 p-3">
+                  <h5>Explorer Edition</h5>
+                  <ul>
+                    <li>PCB: 1 unit</li>
+                    <li>Jumper Cables: 10 pcs each of F2F & MtoF</li>
+                    <li>Snap Cables: 3 units</li>
+                    <li>Straight Pin Headers: 6 units</li>
+                    <li>Angled Pin Headers: 6 units</li>
+                    <li>Resistors: 1 unit each of 1MR, 1.5MR, 1.8MR, 2.1MR</li>
+                    <li>Capacitors: 1 unit each of 3nF, 0.1uF, 0.2uF, 0.5uF</li>
+                    <li>Head Strap: 1 unit</li>
+                    <li>Medical EXG Sensors: 6 units</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Innovator Bundle -->
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card2 h-100 p-3">
+                  <h5>Innovator Bundle</h5>
+                  <ul>
+                    <li>PCB: 1 unit</li>
+                    <li>Jumper Cables: 10 pcs each of F2F & MtoF</li>
+                    <li>Snap Cables: 3 units</li>
+                    <li>Straight Pin Headers: 6 units</li>
+                    <li>Angled Pin Headers: 6 units</li>
+                    <li>Resistors: 1 unit each of 1MR, 1.5MR, 1.8MR, 2.1MR</li>
+                    <li>Capacitors: 1 unit each of 3nF, 0.1uF, 0.2uF, 0.5uF</li>
+                    <li>Head Strap: 1 unit</li>
+                    <li>Medical EXG Sensors: 18 units</li>
+                    <li>ESP 32 Microcontroller: 1 unit</li>
+                    <li>Micro USB Cable: 1 unit</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Pioneer Pro Kit -->
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card2 h-100 p-3">
+                  <h5>Pioneer Pro Kit</h5>
+                  <ul>
+                    <li>PCB: 1 unit</li>
+                    <li>Jumper Cables: 10 pcs each of F2F & MtoF</li>
+                    <li>Snap Cables: 3 units</li>
+                    <li>Straight Pin Headers: 6 units</li>
+                    <li>Angled Pin Headers: 6 units</li>
+                    <li>Resistors: 1 unit each of 1MR, 1.5MR, 1.8MR, 2.1MR</li>
+                    <li>Capacitors: 1 unit each of 3nF, 0.1uF, 0.2uF, 0.5uF</li>
+                    <li>ESP 32 Microcontroller: 1 unit</li>
+                    <li>Micro USB Cable: 1 unit</li>
+                    <li>NuPrep Gel (25g): 1 unit</li>
+                    <li>Wet Wipes: 1 pack</li>
+                    <li>Head Strap: 1 unit</li>
+                    <li>Medical EXG Sensors: 30 units</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- Intro Heading -->
+           <div class="intro">
+            <h3 class="text-center">Introducing Neuphony EXG Synapse DIY Neuroscience Kits</h3>
+            <div class="video-frame">
+                <iframe width="947" height="448" src="https://www.youtube.com/embed/jTDCuVDt-ms" 
+                        title="Unlock the Future of HCI &amp; BCI Projects | Introducing Neuphony EXG Synapse DIY Neuroscience Kits" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" >
+                </iframe>
+            </div>
+           </div>
+    
+           <style>
+            /* General Styles */
+.explore-container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.explore-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.explore-col {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.explore-box {
+    background-color: #000000; /* Black background */
+    border: 2px solid white; /* White border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align text */
+}
+
+.explore-heading {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white; /* White color for headings */
+}
+
+.explore-subheading {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: white; /* White color for subheading */
+}
+
+.explore-paragraph {
+    font-size: 16px;
+    color: #666; /* Lighter color for paragraphs */
+}
+
+/* Large devices (Desktops) */
+@media (min-width: 992px) {
+    .explore-col-lg-6 {
+        width: 48%; /* Two columns side by side */
+    }
+}
+
+/* Medium devices (Tablets) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .explore-col-md-12 {
+        width: 100%; /* Full width for tablets */
+    }
+}
+
+/* Small devices (Phones) */
+@media (max-width: 767px) {
+    .explore-col-lg-6, .explore-col-md-12 {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .explore-box {
+        padding: 15px;
+    }
+
+    .explore-heading, .explore-subheading {
+        font-size: 20px;
+    }
+
+    .explore-paragraph {
+        font-size: 14px;
+    }
+}
+
+           </style>
+       
+         <!-- Explore Section -->
+              <div class="explore-container mt-5">
+    <!-- First Row -->
+                   <div class="explore-row">
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h3 class="explore-heading">Explore Biopotential Data</h3>
+                <p class="explore-paragraph">Capture and analyze diverse body signals for health and tech applications with Synapse.</p>
+            </div>
+        </div>
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h3 class="explore-heading">Project Pathways</h3>
+                <p class="explore-paragraph">From health monitors to interactive tech, Synapse provides projects.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="explore-row">
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h3 class="explore-heading">Accessible Technology</h3>
+                <p class="explore-paragraph">Get started on your neuroscience journey with Synapse.</p>
+            </div>
+        </div>
+        <div class="explore-col explore-col-lg-6 explore-col-md-12 mb-4">
+            <div class="explore-box">
+                <h5 class="explore-subheading">Explore and Learn with "HCI & Biofeedback Kit"</h5>
+                <p class="explore-paragraph">Discover the fusion of technology and wellness biofeedback kit designed.</p>
+            </div>
+        </div>
+    </div>
+              </div>
+<!-- End Explore Section -->
+
+        <!-- end box -->
+         <style>
+          .get-in-touch-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+         </style>
+
+           <!--Get In Touch-->
+           <div class="row mt-4  ms-3 me-3">
+            <h5><p style="text-align: center;">Get In Touch</p></h5>
+            <h2><p style="text-align: center;"><b>Get in touch with our team to see how Ten Brain Research can help you</b></p></h2>
+            <h6><p style="text-align: center;"><b>Get in touch with our team to see how Ten Brain Research can revolutionize interaction with technology</b></p></h6>
+            <div class="col-sm-2"></div>
+              <div class="col-sm-8">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <img src="https://www.neuphony.com/img/product-exg-synapse/interaction.webp" 
+                      width="500" 
+                      class="get-in-touch-img">
+                 
+                    </div>
+                    <div class="col-sm-6 get-in">
+                      {% if success_msg %}
+                          <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
+                          </div>
+                      {% endif %}  
+                      <form method="post" action="/ten_brain_exg_synapse" autocomplete="off">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <label for="exampleInputEmail1" class="label-text">Your Name</label>
+                          <input name="uname" type="text" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group mt-3">
+                          <label for="exampleInputEmail1" class="label-text">Email ID</label>
+                          <input name="uemail" type="email" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email ID">
+                        </div>
+                        <div class="form-group mt-3">
+                          <label for="exampleInputEmail1" class="label-text">Phone No</label>
+                          <input name="umobile" type="number" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Phone No">
+                        </div>
+                        <div class="form-group mt-3">
+                          <label for="exampleInputEmail1" class="label-text">Country</label>
+                          <input name="ucountry" type="text" class="form-control text-form" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Country">
+                        </div>
+                        <div class="form-group mt-3">
+                          <label for="exampleInputEmail1" class="label-text">Your Message</label>
+                          <input name="umessage" type="text" class="form-control text-form" size="30" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your message">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-warning mt-3 submit-btn">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <!--end Get in touch-->
+    
+        
+    
+      
+        
+    <style>
+      .my-slider{
+  padding: 0 70px;
+}
+.slick-initialized .slick-slide{
+  background-color: #111;
+  color: #FFF;
+  height: 200px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.slick-next, .slick-prev{
+  z-index: 5;
+}
+.slick-next{
+  right: 15px;
+}
+.slick-prev{
+  left: 15px;
+}
+.slick-next:before, .slick-prev:before{
+  color: #000;
+  font-size: 26px;
+}
+.card-related-products{
+  /* width: 0rem; */
+  width: 20px; 
+  height: 100%; 
+  /* background-color: #111;  */
+  border-radius: 10%;
+  color: #fff;;
+}
+@media (max-width: 768px) {
+.slick-initialized .slick-slide{
+  background-color: #111;
+  color: #FFF;
+  height: 200px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-list{
+  margin-left: -28px !important;
+  margin-right: -32px !important;
+}
+}
+
+    </style>
+     <!--Related Products-->
+     <div class="row mt-4">
+      <h5><p style="text-align: center;">Related Products</p></h5>
+      <h2><p style="text-align: center;"><b>Embark on a journey of Brain Exploration with us</b></p></h2>
+      <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row">
+              <div class="wrapper">
+                <div class="my-slider">
+                  <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
+                    <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyFlexCap.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                    <div class="card-body">
+                      <h4 class="card-title" style="text-align: center;">Ten Brain Research Flex Cap</h4>
+                      <p class="card-text" style="text-align: center;">8 – Channel Wireless and Dry EEG Headset. Movable Electrodes and compatible with Ten Brain Research Desktop Application</p>
+                    </div>
+                  </div>
+                  <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
+                    <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyEXGSynapse.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                    <div class="card-body">
+                      <h4 class="card-title" style="text-align: center;">Ten Brain Research EXG Synapse</h4>
+                      <p class="card-text" style="text-align: center;">DIY Neuroscience Kit. A BCI/HCI ready Kit with comprehensive biopotential signal compatibility</p>
+                    </div>
+                  </div>
+                  <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
+                    <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyDesktopApp.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                    <div class="card-body">
+                      <h4 class="card-title" style="text-align: center;">Ten Brain Research Desktop App</h4>
+                      <p class="card-text" style="text-align: center;">One Stop Solution for Real-time EEG Data, Band Powers and Cognitive Insights (Connection via Cable OR Bluetooth dongle)</p>
+                    </div>
+                  </div>
+                  <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
+                    <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyMobileApplication.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                    <div class="card-body">
+                      <h4 class="card-title" style="text-align: center;">Ten Brain Research Mobile Application</h4>
+                      <p class="card-text" style="text-align: center;">Brain training &amp; Meditation App . Guided and Music Meditations backed by Neuroscience with Cognitive Insights</p>
+                    </div>
+                  </div>
+                  <div class="card card-related-products" style="height: 100%; border-radius: 10%; color: #fff;;">
+                    <img class="card-img-top" src="https://www.neuphony.com/img/how-it-works/NeuphonyHeadband.webp" alt="Card image cap"  style="border-radius: 25px; margin-left: 10px; padding-right: 25px;">
+                    <div class="card-body">
+                      <h4 class="card-title" style="text-align: center;">Ten Brain Research Headband</h4>
+                      <p class="card-text" style="text-align: center;">6 – Channel Wireless and Dry EEG Headset. (Compatible with Ten Brain Research Mobile Application and Ten Brain Research Desktop Application)</p>
+                    </div>
+                  </div>                              
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <!--end related Products-->
+
+    </div>
+   
+    
+    <!--main-->
+    
+    <!-- <script>
+      let currentIndex = 0;
+    
+    function moveSlider(direction) {
+      const slider = document.querySelector('.slider-container');
+      const cards = document.querySelectorAll('.card3');
+      const totalCards = cards.length;
+      const visibleCards = 4; // Cards shown at once
+    
+      if (direction === 'next') {
+        currentIndex += 1;
+        if (currentIndex >= totalCards - visibleCards + 1) {
+          currentIndex = 0;
+        }
+      } else {
+        currentIndex -= 1;
+        if (currentIndex < 0) {
+          currentIndex = totalCards - visibleCards;
+        }
+      }
+    
+      const offset = -(currentIndex * (100 / visibleCards)) + '%';
+      slider.style.transform = `translateX(${offset})`;
+    }
+    
+    </script> -->
+{% endblock 'main' %}

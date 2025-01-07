@@ -1,0 +1,1053 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tTen Brain Research Flex cap</title> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/xzoom/dist/xzoom.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css"> -->
+
+  
+  <style>
+    .ootb-tabcordion--entry.is-active .ootb-tabcordion--entry-content {
+      margin-top: 0;
+      height: auto;
+      opacity: 1;
+      transition: margin 400ms ease-out -100ms;
+    }
+        
+    .ootb-tabcordion--entry-container {
+      overflow: hidden;
+      margin-bottom: 1px;
+    }
+    
+    .ootb-tabcordion--entry-content {
+      position: relative;
+      margin-top: -100%;
+      height: 0;
+      opacity: 0;
+      transition: margin 500ms ease-in;
+      padding: 1rem;
+    }
+    
+.w4-head-content{
+  position: absolute ;
+  bottom:20rem;
+  left:5rem;
+}
+
+    .slider{
+      .parent-slide{padding:5px;}
+      img{display: block;
+      margin:auto;}
+    }
+
+    
+    .subscription-section {
+      text-align: center;
+      background-color: #f1f1f1 !important;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .subscription-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+    
+    .subscription-section p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #666666;
+    }
+    
+    .subscription-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .subscription-form input[type="email"] {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      flex: 1;
+      max-width: 300px;
+    }
+    
+    .subscription-form button {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #ffffff;
+      background-color: #4a69bd;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .subscription-form button:hover {
+      background-color: #3b55a3;
+    }
+    
+    
+
+  @media(max-width:884px)
+    { 
+      /* body{
+        font-size: 15px;
+      } */
+      .EEG-wearable{
+        width: 20%;
+      }
+      .w4-head-content{
+        position: absolute ;
+        top:15rem;
+        left:0rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .subscription-form {
+        flex-direction: column;
+      }
+    
+      .subscription-form input[type="email"] {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media(max-width:320px)
+    { 
+      .w4-head-content{
+        position: absolute ;
+
+        top:5rem;
+        left:0rem;
+      }
+    }
+    
+  
+  </style>
+<!-- </head>
+<body> -->
+
+  <div class="row"> 
+    <div >
+      <img src="https://www.neuphony.com/img/neuphony-flex-cap/NeuphonyFlexcap.webp" width="100%" alt="">
+    </div>
+    <div class="w4-head-content">
+        <!-- <h1><b>Ten Brain Research Flexcap</b></h1>
+        <h2>Esxperience Brain Feedback At Home</h2> -->
+    </div>
+    
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="row"> 
+        <div class="col-sm-6 mt-2 p-2">
+          <div class="card p-2" style="width: 100%;background-color:rgb(221, 221, 221);border-radius:25px">
+            <h1>India’s first EEG wearable</h1>
+            <h5>Exceptional brain monitoring with Ten Brain Research Flex Cap, featuring 8 precision sensors and advanced Bluetooth 4.2 for seamless data transmission</h5>
+
+              <div class="row m-2 text-center">
+                  <div class="col-sm-4 p-3">
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/8ChannelEEG.webp" class="EEG-wearable" width="40%" style="margin: 15px;" alt="">
+                    <h5>8 Channel EEG</h5>
+                  </div>
+                  <div class="col-sm-4 p-3">
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/BatteryLife.webp" class="EEG-wearable" width="40%" style="margin: 15px;" alt="">
+                    <h5>Rechargable Battery with upto 8hrs Battery Life​</h5>
+                  </div>
+                  <div class="col-sm-4 p-3">
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/Wireless.webp" class="EEG-wearable" width="40%" style="margin: 15px;" alt="">
+                    <h5>Wireless Connectivity with Windows & MacOS​</h5>
+                  </div>
+                  <div class="col-sm-4 p-3">
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/EasyFitment.webp" class="EEG-wearable" width="40%" style="margin: 15px;" alt="">
+                    <h5>Variable Cap Sizes for Easy Fitment on All Head Sizes ​</h5>
+                  </div>
+                  <div class="col-sm-4 p-3">
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/Highquality.webp" class="EEG-wearable" width="40%" style="margin: 15px;" alt="">
+                    <h5>Sleek Design and High quality hardware</h5>  
+                  </div>
+                  <div class="col-sm-4 p-3">  
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/Experience.webp" class="EEG-wearable" width="40%"  style="margin: 15px;" alt="">
+                    <h5>Experience Neurofeedback at Home</h5>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+        <div class="col-sm-6 mt-2 p-2">
+          <div class="card p-2" style="width: 100%;background-color:rgb(11, 92, 223);border-radius:25px ;color:white">
+              <h1>Real-time analysis with Ten Brain Research Desktop App Track real-time EEG data, brain</h1>
+              <h4>Track real-time EEG data, brain waves, and cognitive insights. Conduct band-power analysis, custom experiments and more</h4>
+          </div>
+        
+          <div class="col-sm-12 mt-1 p-1">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card p-3" style="width: 100%;background-color:rgb(221, 221, 221);border-radius:25px">
+                  <h2>Features to ease your research and development</h2><br>
+                  <h5>The Ten Brain Research flexcap Integrates with the desktop and mobile app that provides Cognitive Insights into the brain by tracking real time brain data</h5>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card p-3" style="width: 100%;background-color:rgb(0, 0, 0);border-radius:25px ;color:white">
+                  <h2>Develop Brain Computer Applications With Ten Brain Research</h2><br>
+                  <h6>Dive into app creation using real-time EEG data from Ten Brain Research. Discover the potential of Lab Streaming Layer for custom application development.</h6>
+                </div>
+              </div>
+            </div>      
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-2"></div>
+
+    
+  <div class="row mt-5" style="background-color: rgb(230, 229, 229);" >
+
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="card mt-3" style="width: 100%;border-radius:25px;background:transparent">
+            <h1 style="text-align: center;margin-top:5px">Ten Brain Research Headband Product Information</h1>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <!-- default start -->
+        <section id="default" class="padding-top0" >
+          <div class="large-5 column p-4">
+            <div class="xzoom-container">
+              <img class="xzoom" style="border: 1px solid black;" id="xzoom-fancy" src="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband1.webp" width="100%" xoriginal="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband1.webp" />
+              <div class="xzoom-thumbs">
+                <a href="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband1.webp"><img class="xzoom-gallery m-1" width="100" src="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband1.webp" title="The description goes here"></a>
+                <a href="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband2.webp"><img class="xzoom-gallery m-1" width="100" src="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband2.webp" title="The description goes here"></a>
+                <a href="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband3.webp"><img class="xzoom-gallery m-1" width="100" src="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband3.webp" title="The description goes here"></a>
+                <a href="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband4.webp"><img class="xzoom-gallery m-1" width="100" src="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband4.webp" title="The description goes here"></a>
+                <a href="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband5.webp"><img class="xzoom-gallery m-1" width="100" src="https://www.neuphony.com/img/neuphony-flex-cap/Neuphony-Headband5.webp" title="The description goes here"></a>
+              </div>
+            </div>        
+          </div>
+        </section>
+        <!-- default end -->
+              </div>
+              <div class="col-sm-6 mt-5">
+                <h1>Ten Brain Research Headband</h1>
+                <h3>6 channel EEG headset for brain training and neurofeedback at home</h3>
+              </div>
+            </div>
+
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <h4 class="mt-3">Product Description</h4>
+        <div class="card mt-3 mb-3 p-2" style="background: transparent; border-radius:25px">
+          <article class="ootb-tabcordion p-2">
+            <div class="ootb-tabcordion--tabs" role="tablist" aria-label="TabCordion">
+              <div class="row">  
+            <div class="col-sm-6">
+                <button class="tab is-active p-4"  style="width:100%;background:white;color: black; border:2px solid orange" role="tab" aria-selected="true" aria-controls="tab1-tab" id="tab1"><h5>Technical Specifications</h5></button>
+            </div>
+            <div class="col-sm-6">
+                <button class="tab p-4" style="width:100%;background:white;color: black"  role="tab" aria-selected="false" aria-controls="tab2-tab" id="tab2" tabindex="-1"><h5>Product Description</h5></button>
+            </div>
+            
+            </div>
+            </div>
+            <section id="tab1-tab" class="ootb-tabcordion--entry is-active" data-title="" tabindex="-1" role="tabpanel" aria-labelledby="tab1">
+              <div class="ootb-tabcordion--entry-container">
+                  <div class="ootb-tabcordion--entry-content p-2">
+                    <table class="table-bordered fs-3" style="width: 100%;" >
+                      <thead>
+                        <tr style="background-color: rgb(145, 145, 145); color:white">
+                          <th>Specification</th>
+                          <th>Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Sensor Count</td>
+                          <td >6+2 References</td>
+                        </tr>
+                        <tr >
+                          <td>Resolution</td>
+                          <td >24 bits per channel</td>
+                        </tr>
+                        <tr>
+                          <td>Dynamic Range</td>
+                          <td >375 mV (pp)</td>
+                        </tr>
+                        <tr >
+                          <td>Motion Sensor</td>
+                          <td >3x accelerometer</td>
+                        </tr>
+                        <tr>
+                          <td>Battery Life</td>
+                          <td >Up to 8 hours</td>
+                        </tr>
+                        <tr >
+                          <td>Sample Rate</td>
+                          <td >250 SPS</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor Locations</td>
+                          <td  >Fp1, Fp2, F3, F4, Fz, T3, T4, Pz</td>
+                        </tr>
+                        <tr >
+                          <td>LSB Resolution</td>
+                          <td >22.35 nVolts (24 bits mode)</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor Technology</td>
+                          <td >Dry sensors: polycarbonate conductive passive electrodes with Ag/AgCl coating</td>
+                        </tr>
+                        <tr >
+                          <td>Sensor Technology</td>
+                          <td >CMS/DRL references at T3/T4</td>
+                        </tr>
+                        <tr>
+                          <td>Frequency Response</td>
+                          <td >1 – 45 Hz</td>
+                        </tr>
+                        <tr >
+                          <td>Connectivity</td>
+                          <td >Bluetooth® Low Energy 4.2, USB Type-C (with Extender)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+          </section>
+            <section id="tab2-tab" class="ootb-tabcordion--entry" data-title="" tabindex="0" role="tabpanel" aria-labelledby="tab2">
+                <div class="ootb-tabcordion--entry-container">
+                    <div class="ootb-tabcordion--entry-content p-2">
+                        <h4> Ten Brain Research Flex Cap captures data through 8 EEG channels from the brain. With the best signal quality easy to wear and flexible Ten Brain Research flex cap is one of the best caps for researchers. The device has 8 sensors distributed in the brain’s parietal, frontal & temporal lobes with the flexibility to move the sensors based on the requirements of the research. These are dry sensors and do not require any gel or saline solution.</h4>
+                          <h3>Ten Brain Research Desktop Application has the following premium features :</h3>
+                          <ul style="list-style: disc;">
+                            <li><h5>Unique user ID creation along with customised experiments and records of each user
+                            </h5></li>
+                          <li><h5>Real-time sensor connectivity and quality
+                          </h5></li>
+                          <li><h5>Analysing Real-time EEG data through 8 channels
+                          </h5></li>
+                          <li><h5>Frequency analysis and band powers
+                          </h5></li>
+                          <li><h5>Real-time measurements of cognitive states including Stress, External Focus, Mood & PDR
+                          </h5></li>
+                          </ul>
+                          
+                          <h3>*Desktop App to be renewed annually at an extra cost after 1-year subscription ends.
+                          </h3>
+                    </div>
+                </div>
+            </section>  
+        </article>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+
+      <div class="row ">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="row mt-4">
+            <div class="col-sm-6"> 
+              <h2>How to Use Ten Brain Research Flex Cap with Ten Brain Research Desktop Application</h2>
+              <p>The Ten Brain Research Desktop Application is a comprehensive tool for researchers and experts aiming to track real-time EEG data and brain waves with precision. This advanced platform, compatible with our EEG headsets, facilitates detailed EEG brain scans and effective EEG monitoring. It serves as a biofeedback device, allowing for the generation of customized reports and more, making it ideal for neurofeedback training and applications akin to mind control devices in their ability to harness and interpret brain activity.
+              </p>
+            </div>
+            <div class="col-sm-6"> 
+              <h2>Wireless 8-Channel EEG Cap for Researchers, Students & Therapists
+              </h2>
+              <p>Experience the pinnacle of EEG technology with our EEG cap, featuring exceptional signal quality and dry, flexible electrodes. This advanced device integrates seamlessly with EEG brain scan systems, providing accurate EEG monitoring for neurofeedback training. It’s a state-of-the-art biofeedback device that offers a step into the realm of mind control, enabling users to train and understand their brain’s activities with unparalleled precision.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
+
+      <div class="row mt-3" style="background-color: rgb(230, 229, 229);">
+          <div class="col mt-3 text-center" >
+            <h4>Features Of The Ten Brain Research Application</h4>
+            <h2>Unleash Your Brain's Capabilities with Ten Brain Research Flex Cap
+            </h2>
+          </div>
+
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            
+
+            <div class="slider" style="display: block;  " >
+              <div class="slide m-3">
+                <div class="card " style="width: 105%;border-radius: 25px; padding:15px;">
+                  <div class="card-body">
+                    <img src="https://www.neuphony.com/img/neuphony-flex-cap/Real-Time-EEG-Data.webp" width="100%" alt="">
+                    <h2> Real-time EEG Data</h2>
+                    <h5>With Ten Brain Research Headsets and desktop application you can get access to real-time EEG data without any latency.
+                    </h5>
+                  </div>
+                </div>
+                </div>
+
+                <div class="slide m-3">
+                  <div class="card" style="width: 105%;border-radius: 25px; padding:15px">
+                    <div class="card-body">
+                      <img src="https://www.neuphony.com/img/neuphony-flex-cap/BandPowerAnalysis.webp" width="100%" alt="">
+                      <h2> Band Power Analysis</h2>
+                      <h5>Ten Brain Research Desktop App helps you access real-time cognitive insights like focus, calm, mental fatigue, readiness, mood & PDR</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide m-3">
+                  <div class="card" style="width: 105%;border-radius: 25px; padding:15px">
+                    <div class="card-body">
+                      <img src="https://www.neuphony.com/img/neuphony-flex-cap/CognitiveInsights.webp" width="100%" alt="">
+                      <h2> Cognitive Insights</h2>
+                      <h5>Ten Brain Research Desktop App helps you access real-time cognitive insights like focus, calm, mental fatigue, readiness, mood & PDR</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide m-3">
+                  <div class="card" style="width: 105%;border-radius: 25px; padding:15px">
+                    <div class="card-body">
+                      <img src="https://www.neuphony.com/img/neuphony-flex-cap/LabStreamingLayer.webp" width="100%" alt="">
+                      <h2>Lab Streaming Layer</h2>
+                      <h5>Ten Brain Research Desktop Application also allows to develop your own applications and softwares allowing access to real-time EEG data via the Lab Streaming Layer</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="slide m-3">
+                  <div class="card" style="width: 105%;border-radius: 25px; padding:15px">
+                    <div class="card-body">
+                      <img src="https://www.neuphony.com/img/neuphony-flex-cap/Real-Time-EEG-Data.webp" width="100%" alt="">
+                      <h2>Real-time EEG Data</h2>
+                      <h5>With Ten Brain Research Headsets and desktop application you can get access to real-time EEG data without any latency.</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide m-3">
+                  <div class="card " style="width: 105%;border-radius: 25px; padding:15px">
+                    <div class="card-body">
+                      <img src="https://www.neuphony.com/img/neuphony-flex-cap/BandPowerAnalysis.webp" width="100%" alt="">
+                      <h2>Band Power Analysis</h2>
+                      <h5>Ten Brain Research Desktop App helps you access real-time cognitive insights like focus, calm, mental fatigue, readiness, mood & PDR</h5>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
+
+
+      <div class="row mt-5">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10"> 
+          <h1>Build with Ten Brain Research</h1>
+          <h3>Develop custom BCI (Brain Computer Interface) Applications using real time EEG data including Virtual Reality, BCI drones, Brain-controlled robots, Mood based automatic lighting, and more.
+          </h3>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card p-2 m-3" >
+                  <img src="https://www.neuphony.com/img/neuphony-flex-cap/Develop-your-own-applications.webp"  class="card-img-top" alt="...">
+                  <h3 >Develop Your Own Applications </h3>
+                  <h5>Develop custom applications with real-time EEG data, leveraging Lab Streaming Layer for personalized solutions.</h5>
+                  </div>
+              </div> 
+              <div class="col-sm-6">
+                <div class="card p-2 m-3" >
+                  <img src="https://www.neuphony.com/img/neuphony-flex-cap/neuromarketing-neuphony.webp"  class="card-img-top" alt="...">
+                  <h3>Neuromarketing Research & Advertising </h3>
+                  <h5  >Gain a deeper understanding of consumer behavior through brain waves Data & craft compelling advertising campaigns</h5>
+                  </div>
+              </div> 
+              <div class="col-sm-6">
+                <div class="card p-2 m-3" >
+                  <img src="https://www.neuphony.com/img/neuphony-flex-cap/VR-Gamesn.webp"  class="card-img-top" alt="...">
+                  <h3>Brain-Controlled VRs & Gaming</h3>
+                  <h5 >Players can use their thoughts to manipulate characters, objects, or actions within a game, enhancing the gaming experience.</h5>
+                  </div>
+              </div> 
+              <div class="col-sm-6">
+                <div class="card p-2 m-3" >
+                  <img src="https://www.neuphony.com/img/neuphony-flex-cap/Assistive-technology.webp"  class="card-img-top" alt="...">
+                   <h3>Assistive Technology </h3>
+                 <h5 >Enable individuals with motor impairments to control wheelchairs, communication devices, and robotic arms.</h5>
+                 </div>
+              </div>  
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+
+
+      <div class="row mt-5">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="col text-center">
+               <h2 ><b>Get In Touch</b></h2>
+               <h3>Get in touch with our team to see how Ten Brain Research can help you
+              </h3>
+            </div>
+               <div class="row m-3"> 
+            <div class="col-sm-6">
+                <img src="https://www.neuphony.com/img/neuphony-flex-cap/flexcap-demo.webp" alt=" Product" class="img-fluid rounded">
+            </div>
+            <div class="col-sm-6">
+              {% if success_msg %}
+                          <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
+                          </div>
+                      {% endif %}  
+                <form action="/ten_brain_eeg_flexcap" method="post" style="text-align: left;" autocomplete="off">
+                  
+                    {% csrf_token %}
+                    <div class="form-group" >
+                        <label for="name" ><b >Your Name</b></label>
+                      <input type="text" id="name" class="form-control mb-2" name="uname" placeholder="Enter Your Name" />
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="email"><b>Email ID</b></label>
+                      <input type="email" id="email" class="form-control mb-2" name="uemail" placeholder="Enter Your Email ID" />
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="phone"><b>Phone No</b></label>
+                      <input type="tel" id="phone" class="form-control mb-2" name="umobile" placeholder="Your Phone Number" />
+                    </div>
+
+                    <div class="form-group" >
+                      <label for="place" ><b >Country</b></label>
+                    <input type="text" id="place" class="form-control mb-2" name="ucountry" placeholder="Enter Your Country" />
+                  </div>
+                    
+                    <div class="form-group">
+                      <label for="message"><b>Your Message</b></label>
+                      <textarea id="message" class="form-control mb-2" rows="4" name="umessage" placeholder="Enter Your Message"></textarea>
+                    </div>
+                    <div class="button">
+                      <button type="submit" class="btn btn-warning w-100">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+  </div>
+<!-- Footer Section -->
+<div class="subscription-section">
+  <h2>New from Ten Brain Research?</h2>
+  <p>Get the latest from Ten Brain Research by subscribing now.</p>
+  <form class="subscription-form" method="post" action="/submit_subscription">
+    {% csrf_token %}
+    <input type="email" name="uemail" placeholder="Email" required  />
+    <input type="hidden" name="page_url" value="ten_brain_eeg_flexcap">
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  
+  <script>
+      (function ($) {
+          $(document).ready(function() {
+              $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#333', Xoffset: 15});
+              $('.xzoom2, .xzoom-gallery2').xzoom({position: '#xzoom2-id', tint: '#ffa200'});
+              $('.xzoom3, .xzoom-gallery3').xzoom({position: 'lens', lensShape: 'circle', sourceClass: 'xzoom-hidden'});
+              $('.xzoom4, .xzoom-gallery4').xzoom({tint: '#006699', Xoffset: 15});
+              $('.xzoom5, .xzoom-gallery5').xzoom({tint: '#006699', Xoffset: 15});
+      
+              //Integration with hammer.js
+              var isTouchSupported = 'ontouchstart' in window;
+      
+              if (isTouchSupported) {
+                  //If touch device
+                  $('.xzoom, .xzoom2, .xzoom3, .xzoom4, .xzoom5').each(function(){
+                      var xzoom = $(this).data('xzoom');
+                      xzoom.eventunbind();
+                  });
+                  
+                  $('.xzoom, .xzoom2, .xzoom3').each(function() {
+                      var xzoom = $(this).data('xzoom');
+                      $(this).hammer().on("tap", function(event) {
+                          event.pageX = event.gesture.center.pageX;
+                          event.pageY = event.gesture.center.pageY;
+                          var s = 1, ls;
+          
+                          xzoom.eventmove = function(element) {
+                              element.hammer().on('drag', function(event) {
+                                  event.pageX = event.gesture.center.pageX;
+                                  event.pageY = event.gesture.center.pageY;
+                                  xzoom.movezoom(event);
+                                  event.gesture.preventDefault();
+                              });
+                          }
+          
+                          xzoom.eventleave = function(element) {
+                              element.hammer().on('tap', function(event) {
+                                  xzoom.closezoom();
+                              });
+                          }
+                          xzoom.openzoom(event);
+                      });
+                  });
+      
+              $('.xzoom4').each(function() {
+                  var xzoom = $(this).data('xzoom');
+                  $(this).hammer().on("tap", function(event) {
+                      event.pageX = event.gesture.center.pageX;
+                      event.pageY = event.gesture.center.pageY;
+                      var s = 1, ls;
+      
+                      xzoom.eventmove = function(element) {
+                          element.hammer().on('drag', function(event) {
+                              event.pageX = event.gesture.center.pageX;
+                              event.pageY = event.gesture.center.pageY;
+                              xzoom.movezoom(event);
+                              event.gesture.preventDefault();
+                          });
+                      }
+      
+                      var counter = 0;
+                      xzoom.eventclick = function(element) {
+                          element.hammer().on('tap', function() {
+                              counter++;
+                              if (counter == 1) setTimeout(openfancy,300);
+                              event.gesture.preventDefault();
+                          });
+                      }
+      
+                      function openfancy() {
+                          if (counter == 2) {
+                              xzoom.closezoom();
+                              $.fancybox.open(xzoom.gallery().cgallery);
+                          } else {
+                              xzoom.closezoom();
+                          }
+                          counter = 0;
+                      }
+                  xzoom.openzoom(event);
+                  });
+              });
+              
+              $('.xzoom5').each(function() {
+                  var xzoom = $(this).data('xzoom');
+                  $(this).hammer().on("tap", function(event) {
+                      event.pageX = event.gesture.center.pageX;
+                      event.pageY = event.gesture.center.pageY;
+                      var s = 1, ls;
+      
+                      xzoom.eventmove = function(element) {
+                          element.hammer().on('drag', function(event) {
+                              event.pageX = event.gesture.center.pageX;
+                              event.pageY = event.gesture.center.pageY;
+                              xzoom.movezoom(event);
+                              event.gesture.preventDefault();
+                          });
+                      }
+      
+                      var counter = 0;
+                      xzoom.eventclick = function(element) {
+                          element.hammer().on('tap', function() {
+                              counter++;
+                              if (counter == 1) setTimeout(openmagnific,300);
+                              event.gesture.preventDefault();
+                          });
+                      }
+      
+                      function openmagnific() {
+                          if (counter == 2) {
+                              xzoom.closezoom();
+                              var gallery = xzoom.gallery().cgallery;
+                              var i, images = new Array();
+                              for (i in gallery) {
+                                  images[i] = {src: gallery[i]};
+                              }
+                              $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
+                          } else {
+                              xzoom.closezoom();
+                          }
+                          counter = 0;
+                      }
+                      xzoom.openzoom(event);
+                  });
+              });
+      
+              } else {
+                  //If not touch device
+      
+                  //Integration with fancybox plugin
+                  $('#xzoom-fancy').bind('click', function(event) {
+                      var xzoom = $(this).data('xzoom');
+                      xzoom.closezoom();
+                      $.fancybox.open(xzoom.gallery().cgallery, {padding: 0, helpers: {overlay: {locked: false}}});
+                      event.preventDefault();
+                  });
+                 
+                  //Integration with magnific popup plugin
+                  $('#xzoom-magnific').bind('click', function(event) {
+                      var xzoom = $(this).data('xzoom');
+                      xzoom.closezoom();
+                      var gallery = xzoom.gallery().cgallery;
+                      var i, images = new Array();
+                      for (i in gallery) {
+                          images[i] = {src: gallery[i]};
+                      }
+                      $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
+                      event.preventDefault();
+                  });
+              }
+          });
+      })(jQuery);
+  </script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script>
+    (function () {
+      'use strict';
+    
+      const keyboardSupport = function(container, hasTabs) {
+        const tablist = container.querySelectorAll('[role="tablist"]')[0];
+        let tabs;
+        let panels;
+    
+        const generateArrays = function() {
+          panels = container.querySelectorAll('[role="tabpanel"]');
+          tabs = container.querySelectorAll('[role="tab"]');
+        };
+        
+        generateArrays();
+    
+        // For easy reference
+        const keys = {
+          end: 35,
+          home: 36,
+          left: 37,
+          up: 38,
+          right: 39,
+          down: 40,
+          delete: 46,
+          enter: 13,
+          space: 32
+        };
+    
+        // Add or subtract depending on key pressed
+        const direction = {
+          37: -1,
+          38: -1,
+          39: 1,
+          40: 1
+        };
+    
+        // Deactivate all tabs and tab panels
+        const deactivateTabs = function() {
+          for (let t = 0; t < tabs.length; t++) {
+            tabs[t].setAttribute('tabindex', '-1');
+            tabs[t].setAttribute('aria-selected', 'false');
+          }
+        };
+        
+        // Activates any given tab panel
+        const activateTab = function(tab, setFocus) {
+          setFocus = setFocus || true;
+          // Deactivate all other tabs
+          deactivateTabs();
+    
+          // Remove tabindex attribute
+          tab.removeAttribute('tabindex');
+    
+          // Set the tab as selected
+          tab.setAttribute('aria-selected', 'true');
+    
+          // Set focus when required
+          if (setFocus) {
+            tab.focus();
+          }
+        };
+        
+        const triggerTabClick = function(e) {
+          const clickedId = e.target.getAttribute('id');
+          if(clickedId) {
+            const clickedTab = container.querySelector('[aria-controls="' + clickedId + '"]');
+            clickedTab.click();
+             document.getElementById(clickedId).scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        };
+        
+        const accordionClickEventListener = function(event) {
+          triggerTabClick(event);
+        };
+        
+        // When a tab is clicked, activateTab is fired to activate it
+        const clickEventListener = function(event) {
+           const tab = event.target;
+            activateTab(tab, false);
+        };
+        
+        // Make a guess
+        const focusFirstTab = function() {
+          const target = hasTabs ? tabs : panels;
+          target[0].focus();
+        };
+    
+        // Make a guess
+        const focusLastTab = function() {
+          const target = hasTabs ? tabs : panels;
+          target[target.length - 1].focus();
+        };
+        
+        // Either focus the next, previous, first, or last tab
+        // depending on key pressed
+        const switchTabOnArrowPress = function(event) {
+          const pressed = event.keyCode;
+    
+          if (direction[pressed]) {
+            const target = event.target;
+            const targetElems = hasTabs ? tabs : panels;
+            if (target.index !== undefined) {
+              if (targetElems[target.index + direction[pressed]]) {
+                targetElems[target.index + direction[pressed]].focus();
+              }
+              else if (pressed === keys.left || pressed === keys.up) {
+                focusLastTab();
+              }
+              else if (pressed === keys.right || pressed == keys.down) {
+                focusFirstTab();
+              }
+            }
+          }
+        };
+        
+        // When a tablist's aria-orientation is set to vertical,
+        // only up and down arrow should function.
+        // In all other cases only left and right arrow function.
+        const determineOrientation = function(event) {
+          const key = event.keyCode;
+          const vertical = tablist ? tablist.getAttribute('aria-orientation') === 'vertical' : null;
+          let proceed = false;
+    
+          if (vertical || !hasTabs) {
+            if (key === keys.up || key === keys.down) {
+              event.preventDefault();
+              proceed = true;
+            }
+          }
+          else {
+            if (key === keys.left || key === keys.right) {
+              proceed = true;
+            }
+          }
+    
+          if (proceed) {
+            switchTabOnArrowPress(event);
+          }
+        };
+        
+        // Handle keydown on tabs
+        const keydownEventListener = function(event) {
+          const key = event.keyCode;
+          switch (key) {
+            case keys.end:
+              event.preventDefault();
+              // Activate last tab
+              focusLastTab();
+              break;
+            case keys.home:
+              event.preventDefault();
+              // Activate first tab
+              focusFirstTab();
+              break;
+    
+              // Up and down are in keydown
+              // because we need to prevent page scroll >:)
+              case keys.up:
+              case keys.down:
+              determineOrientation(event);
+              break;
+          }
+        };
+    
+        // Handle keyup on tabs
+        const keyupEventListener = function(event) {
+          const key = event.keyCode;
+          switch (key) {
+            case keys.left:
+            case keys.right:
+              determineOrientation(event);
+              break;
+            case keys.enter:
+            case keys.space:
+              if(hasTabs) {
+                activateTab(event.target);
+              } else {
+                triggerTabClick(event);
+              }
+              break;
+          }
+        };
+    
+        const addListeners = function(index) {
+          const target = hasTabs ? tabs[index] : panels[index];
+          tabs[index].addEventListener('click', clickEventListener);
+          if(target) {
+             if(!hasTabs) {
+              target.addEventListener('click', accordionClickEventListener);
+            }
+            target.addEventListener('keydown', keydownEventListener);
+            target.addEventListener('keyup', keyupEventListener);
+            // Build an array with all tabs (<button>s) in it
+            target.index = index;
+          }    
+        };
+    
+        // Bind listeners
+        for (let i = 0; i < tabs.length; ++i) {
+          addListeners(i);
+        }
+       
+        // Accordion mode
+        if(!hasTabs) {
+          for (const panel of panels) {
+            panel.onclick = function(e) {
+              triggerTabClick(e);
+            };
+          }
+        }   
+    };
+      
+      const toggleClass = function (otherElems, thisELem, className = 'is-active') {
+        for (const otherElem of otherElems) {
+          otherElem.classList.remove(className);
+        }
+        thisELem.classList.add(className);
+      };
+      
+      const toggleVerticalTabs = function (tabContainer, tabs, items, item) {
+        item.onclick = function (e) {
+            const currId = item.getAttribute('id');
+            const tab = tabContainer.querySelector('.ootb-tabcordion--tabs [aria-controls="' + currId + '"]');
+            toggleClass(tabs, tab);
+            toggleClass(items, item);
+          };
+      };
+      
+      const toggleTabs = function (tabContainer) {
+        const tabs = tabContainer.querySelectorAll('.ootb-tabcordion--tabs .tab');
+        const items = tabContainer.querySelectorAll('.ootb-tabcordion--entry');
+        for (const tab of tabs) {
+          tab.onclick = function() {
+            const target = tab.getAttribute('aria-controls');
+            const content = document.getElementById(target);
+            toggleClass(tabs, tab);
+            toggleClass(items, content);
+          };
+        }
+        for (const item of items) {
+          toggleVerticalTabs(tabContainer, tabs, items, item);
+        }
+      };
+    
+      const hasTabs = function(container) {
+        return container.classList.contains('has-tabs');
+      };
+      
+      const modeSwitcher = function (tabContainer, containerWidth) {
+        const tabs = tabContainer.querySelectorAll('.tab');
+        const container = tabs[0].closest('.ootb-tabcordion');
+        let totalW = 0;
+        for (const tab of tabs) {
+          totalW += tab.offsetWidth;
+        }
+        if (totalW >= containerWidth) {
+          container.classList.remove('has-tabs');
+        } else {
+          container.classList.add('has-tabs');
+        }
+        keyboardSupport(tabContainer, hasTabs(container));
+      };
+      
+      const resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+          modeSwitcher(entry.target, entry.contentRect.width);
+        }
+      });
+    
+      const tabContainers = document.querySelectorAll('.ootb-tabcordion');
+      for (const tabContainer of tabContainers) {
+        const tabList = tabContainer.querySelector('.ootb-tabcordion--tabs');
+        resizeObserver.observe(tabList);
+        toggleTabs(tabContainer);
+        keyboardSupport(tabContainer, hasTabs(tabContainer));
+      }
+    })();
+  </script>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+
+  <script>
+    window.onload=function(){
+      $('.slider').slick({
+      autoplay:true,
+      autoplaySpeed:1000,
+      arrows:false,
+      responsive: [
+        {
+          breakpoint: 820,
+          settings: {
+          slidesToShow: 1,
+          }
+        }
+      ],
+      centerMode:false,
+      slidesToShow:3,
+      slidesToScroll:1
+      });
+    }; 
+  </script>
+
+<!-- </body>
+</html> -->
+
+
+{% endblock 'main' %}
