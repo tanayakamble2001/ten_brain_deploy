@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=+tficroe&rwn()9*^)tg5dhs!(+s1(jto7c@e9@*59(skh097'
+SECRET_KEY = os.getenv('django-insecure-=+tficroe&rwn()9*^)tg5dhs!(+s1(jto7c@e9@*59(skh097')
 
 # SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG', default=False)
@@ -35,7 +35,7 @@ DEBUG = env('DEBUG', default=False)
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["app.onrender.com"]
 
 #Email settings
 EMAIL_HOST="smtp.gmail.com" #smtp=simple mail transfer protocol
@@ -114,14 +114,27 @@ WSGI_APPLICATION = 'brain.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ten_brain_db',
+#         'USER': 'USER',
+#         'PASSWORD': 'U$er5432',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ten_brain_db',
-        'USER': 'USER',
-        'PASSWORD': 'U$er5432',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv('ten_brain_db'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('U$er5432'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
