@@ -35,7 +35,7 @@ DEBUG = env('DEBUG', default=False)
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["app.onrender.com"]
 
 #Email settings
 EMAIL_HOST="smtp.gmail.com" #smtp=simple mail transfer protocol
