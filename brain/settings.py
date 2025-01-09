@@ -94,13 +94,13 @@ WSGI_APPLICATION = 'brain.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # default='postgres://USER:PASSWORD@HOST:PORT/DBNAME'
-#         default='postgres://USER:PASSWORD@localhost:5432/DBNAME',
-#         conn_max_age=600
-#     )
-# }
+DATABASES = {
+    'default': dj_database_url.config(
+        # default='postgres://USER:PASSWORD@HOST:PORT/DBNAME'
+        default='postgres://USER:PASSWORD@localhost:5432/ten_brain_db',
+        conn_max_age=600
+    )
+}
 
 
 # DATABASES = {
@@ -114,16 +114,16 @@ WSGI_APPLICATION = 'brain.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ten_brain_db',
-        'USER': 'USER',
-        'PASSWORD': 'U$er5432',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ten_brain_db',
+#         'USER': 'USER',
+#         'PASSWORD': 'U$er5432',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # DATABASES = {
